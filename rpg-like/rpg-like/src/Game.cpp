@@ -4,7 +4,7 @@
 Game::Game() { init("123"); }
 
 
-void Game::init(std::string path)
+void Game::init(const std::string& path)
 {   
     //TODO: 
     //  1.implemetn loadFromFile func: m_assets.loadFromFile(path);
@@ -14,6 +14,10 @@ void Game::init(std::string path)
 
 void Game::sUserInput()
 {
+    while (m_window.pollEvent(m_event))
+    {
+        if (m_event.type == sf::Event::Closed) quit();
+    }
 
 }
 
@@ -42,4 +46,10 @@ void Game::update()
 bool Game::isRunning()
 {
     return m_running && m_window.isOpen();
+}
+
+void Game::quit()
+{
+    m_running = false;
+    m_window.close();
 }

@@ -14,7 +14,7 @@ protected:
 	Assets				m_assets;
 
 	//Initialization
-	void init(std::string path);
+	void init(const std::string& path);
 	void sUserInput();
 public:
 	//Constructor
@@ -26,6 +26,7 @@ public:
 	void run();
 	void update();
 	bool isRunning();
+	void quit();
 
 };
 #endif // !GAME_H
