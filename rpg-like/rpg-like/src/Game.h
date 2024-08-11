@@ -14,7 +14,7 @@ protected:
 	sf::Clock			m_dtClock;
 
 
-	//Initialization
+	//Initialization for game
 	void init(const std::string& path);
 	void sUserInput();
 public:
