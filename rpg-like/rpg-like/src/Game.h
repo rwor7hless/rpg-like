@@ -1,17 +1,18 @@
 #ifndef GAME_H
 #define GAME_H
-#include <SFML/Graphics.hpp>
-#include "Assets.h"
-#include <memory>
+#include "State.h"
+
 class Game
 {
 protected:
 	//Variables
-	sf::RenderWindow	m_window;
+	std::shared_ptr<sf::RenderWindow>	m_window;
+
 	sf::Event			m_event;
-	std::string			m_currentScene;
 	bool				m_running = true;
-	Assets				m_assets;
+	float				m_deltaTime;
+	sf::Clock			m_dtClock;
+
 
 	//Initialization
 	void init(const std::string& path);
@@ -25,9 +26,9 @@ public:
 	void render();
 	void run();
 	void update();
-	bool isRunning();
 	void quit();
-
+	void updateDt();
+	bool isRunning();
 };
 #endif // !GAME_H
 

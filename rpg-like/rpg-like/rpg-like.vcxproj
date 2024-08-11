@@ -138,10 +138,15 @@
     <ClCompile Include="src\Assets.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\State.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Assets.h" />
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\State.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\window.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
