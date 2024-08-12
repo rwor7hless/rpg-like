@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entities\Entity.cpp" />
     <ClCompile Include="States\GameState.cpp" />
     <ClCompile Include="src\Assets.cpp" />
     <ClCompile Include="src\Game.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="States\State.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entities\Entity.h" />
     <ClInclude Include="States\GameState.h" />
     <ClInclude Include="src\Assets.h" />
     <ClInclude Include="src\Game.h" />

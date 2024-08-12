@@ -6,7 +6,7 @@
 class GameState : public State
 {
 private:
-
+	Entity player;
 
 public:
 	GameState(std::shared_ptr<sf::RenderWindow> m_stateWindow);

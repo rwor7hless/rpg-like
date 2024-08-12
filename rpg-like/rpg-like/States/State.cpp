@@ -3,7 +3,7 @@
 
 State::State(std::shared_ptr<sf::RenderWindow> m_stateWindow)
 {
-	m_stateWindow = m_stateWindow;
+	this->m_stateWindow = m_stateWindow;
 	this->m_quit = false;
 }
 

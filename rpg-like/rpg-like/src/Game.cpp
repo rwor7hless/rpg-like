@@ -27,7 +27,7 @@ void Game::initWindow(const std::string& path)
     //closing opened file
     fs.close();
 
-    //make readed settings
+    //apply  readed settings
     m_window = std::make_shared<sf::RenderWindow>(windowBounds, title);
     m_window->setFramerateLimit(frameRate);
     m_window->setVerticalSyncEnabled(vSync);
