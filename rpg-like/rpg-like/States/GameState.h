@@ -14,6 +14,7 @@ public:
 
 
 	//Functions
+	void updateKeyBinds(const float& dt);
 	void update(const float& dt);
 	void render(std::shared_ptr<sf::RenderTarget> target = nullptr);
 	void endState();

@@ -30,9 +30,10 @@ public:
 	void render();
 	void run();
 	void update();
-	void quit();
 	void updateDt();
 	bool isRunning();
+	void quit();
+	void endApp();
 };
 #endif // !GAME_H
 

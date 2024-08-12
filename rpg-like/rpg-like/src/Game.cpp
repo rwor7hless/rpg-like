@@ -76,6 +76,15 @@ void Game::update()
     if (!this->states.empty())
     {
         this->states.top()->update(this->m_deltaTime);
+        if (this->states.top()->getQuit())
+        {
+            this->states.top()->endState();
+            this->states.pop();
+        }
+    }
+    else {
+        this->endApp();
+        this->quit();
     }
 }
 
@@ -90,12 +99,17 @@ void Game::quit()
     m_window->close();
 }
 
+void Game::endApp()
+{
+    std::cout << "\n----------------APPLICATION CLOSED----------------";
+}
+
 void Game::updateDt()
 {
     /* update m_deltaTime with the time it takes to update and render one frame */
 
     this->m_deltaTime = this->m_dtClock.restart().asSeconds();
-    system("cls");
-    std::cout << m_deltaTime << std::endl;
+    //system("cls");
+   // std::cout << m_deltaTime << std::endl;
 
 }
