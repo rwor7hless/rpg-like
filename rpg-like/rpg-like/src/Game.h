@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-#include "State.h"
+#include "../States/GameState.h"
 
 class Game
 {
@@ -14,12 +14,16 @@ protected:
 	sf::Clock			m_dtClock;
 
 
+	std::stack<std::shared_ptr<State>> states;
+
 	//Initialization for game
-	void init(const std::string& path);
+	void initWindow(const std::string& path = "");
+	void initStates();
 	void sUserInput();
 public:
 	//Constructor
 	Game();
+	virtual ~Game();
 
 
 	//Functions

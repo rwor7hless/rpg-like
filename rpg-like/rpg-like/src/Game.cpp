@@ -1,10 +1,11 @@
 #include "Game.h"
 
 
-Game::Game() { init("123"); }
+Game::Game() { initWindow(/*path*/); initStates(); }
 
+Game::~Game() {};
 
-void Game::init(const std::string& path)
+void Game::initWindow(const std::string& path)
 {   
     // open the .ini file to configurate window
     std::ifstream fs("config/window.ini");
@@ -32,6 +33,11 @@ void Game::init(const std::string& path)
     m_window->setVerticalSyncEnabled(vSync);
 }
 
+void Game::initStates()
+{
+    this->states.push(std::make_shared<GameState>(this->m_window));
+}
+
 void Game::sUserInput()
 {
     while (m_window->pollEvent(m_event))
@@ -47,6 +53,11 @@ void Game::render()
 {
     m_window->clear();
     // Отрисовка объектов игры
+
+    if (!this->states.empty())
+    {
+        this->states.top()->render(this->m_window);
+    }
     m_window->display();
 }
 
@@ -62,6 +73,10 @@ void Game::run()
 
 void Game::update()
 {
+    if (!this->states.empty())
+    {
+        this->states.top()->update(this->m_deltaTime);
+    }
 }
 
 bool Game::isRunning()
