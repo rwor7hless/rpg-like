@@ -15,10 +15,10 @@ Entity::~Entity()
 
 void Entity::update(const float& dt)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) this->move(dt, -1.f, 0.f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) this->move(dt,  0.f, 1.f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) this->move(dt,  1.f, 0.f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) this->move(dt,   0, -1.f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) this->move(dt, -0.1f, 0.f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) this->move(dt,  0.f,  0.1f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) this->move(dt,  0.1f, 0.f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) this->move(dt,  0.f, -0.1f);
 }
 
 void Entity::render(std::shared_ptr<sf::RenderTarget> target)
